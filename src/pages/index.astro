@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TabContainer from "../components/tabs";
+import Editor from "../components/editor.astro";
+---
+
+<Layout>
+  <div class="app">
+    <TabContainer client:load />
+    <Editor />
+  </div>
+</Layout>
+
+<style is:global>
+  .app {
+    overflow: hidden;
+    height:;
+    width: 100dvw;
+  }
+  .tab-container {
+    height: 40px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: minmax(400px, 800px) 1fr;
+  }
+  .code-container,
+  .console-container {
+    height: calc(100dvh - 40px);
+  }
+  .console-container {
+    font-size: 18px;
+    .undf {
+      color: #f00;
+    }
+  }
+</style>
+
+<script src="../js/main.js"></script>
